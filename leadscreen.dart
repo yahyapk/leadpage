@@ -74,13 +74,13 @@ class _LeadState extends State<Lead> {
     itemBuilder: (context, index) {
     // Map<String, dynamic> leadData = dataList[index];
     return Column(
-    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
     Padding(
-    padding: const EdgeInsets.only(top: 20,bottom: 15),
+    padding: const EdgeInsets.all(10),
     child: Container(
-    height: MediaQuery.of(context).size.height / 5,
-    width: MediaQuery.of(context).size.width / 1.1,
+    height: MediaQuery.of(context).size.height /5,
+    width: MediaQuery.of(context).size.width /1,
     decoration: BoxDecoration(
     color: Colors.white70,
     boxShadow: [
@@ -94,13 +94,15 @@ class _LeadState extends State<Lead> {
     borderRadius: BorderRadius.circular(20),
     ),
     child: Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
     Padding(
     padding: const EdgeInsets.only(left: 15),
     child: Container(
     width:
     MediaQuery.of(context).size.width / 8.5,
-    height: 100,
+    height: MediaQuery.of(context).size.height /12,
     decoration: BoxDecoration(
     color: Colors.grey,
     borderRadius: BorderRadius.circular(30),
@@ -117,10 +119,11 @@ class _LeadState extends State<Lead> {
     ),
     Padding(
     padding:
-    const EdgeInsets.only(top: 50, left: 10),
+    const EdgeInsets.only(left: 10),
     child: Column(
     crossAxisAlignment:
     CrossAxisAlignment.start,
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
     Text(
     leadsModel.data!.leads![index].name!,
@@ -148,7 +151,7 @@ class _LeadState extends State<Lead> {
     ],
     ),
     ),
-    SizedBox(width: 15),
+    SizedBox(width: 10),
     ElevatedButton(
     onPressed: () {},
     child: Text(
@@ -165,7 +168,10 @@ class _LeadState extends State<Lead> {
     ),
     ),
     SizedBox(width: 10),
-    Icon(Icons.call, size: 40),
+    Padding(
+      padding: const EdgeInsets.only(right: 9),
+      child: Icon(Icons.call, size: 40),
+    ),
     ],
     ),
     ),
